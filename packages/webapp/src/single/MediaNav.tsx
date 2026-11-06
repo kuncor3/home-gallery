@@ -54,10 +54,11 @@ export const MediaNav = ({current, prev, next, listLocation, showNavigation, dis
   const iconClass = "md:text-2xl text-gray-800"
 
   const hasGeo = current?.latitude && current?.longitude && current.latitude != 0 && current.longitude != 0
+  const isVideo = current?.type === 'video'
 
   return (
     <>
-      <div className={classNames('absolute z-10 top-4 right-4 flex gap-2', itemClass)}>
+      <div className={classNames('absolute z-10 top-4 flex gap-2', isVideo ? 'left-4' : 'right-4', itemClass)}>
         {!diabledFlags?.includes('nav') && 
           <a onClick={() => dispatch({type: 'list'})} className={classNames(buttonClass)} title="Show media stream (ESC)">
             <FontAwesomeIcon icon={icons.faXmark} className={iconClass}/>
@@ -78,7 +79,7 @@ export const MediaNav = ({current, prev, next, listLocation, showNavigation, dis
           </a>
         </div>
       }
-      <div className={classNames('absolute z-10 bottom-4 left-1/2 -translate-x-1/2 flex gap-2')}>
+      <div className={classNames('absolute z-10 left-1/2 -translate-x-1/2 flex gap-2', isVideo ? 'bottom-20' : 'bottom-4')}>
         {!diabledFlags.includes('nav') && listLocation &&
           <a onClick={() => dispatch({type: 'list'})} className={classNames(buttonClass, itemClass)} title="Show media stream (ESC)">
             <FontAwesomeIcon icon={icons.faTh} className={iconClass}/>

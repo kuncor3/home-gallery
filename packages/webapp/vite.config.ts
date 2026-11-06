@@ -37,7 +37,7 @@ export default defineConfig(() => {
           description: 'All personal photos in your pocket',
           start_url: '.',
           scope: '/',
-          display: 'fullscreen',
+          display: 'standalone',
           orientation: 'any',
           theme_color: '#000000',
           background_color: '#eee',

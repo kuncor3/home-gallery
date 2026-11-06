@@ -33,7 +33,8 @@
     "@home-gallery/logger": "file:../logger",
     "@home-gallery/plugin": "file:../plugin",
     "@home-gallery/query": "file:../query",
-    "@home-gallery/types": "file:../types"
+    "@home-gallery/types": "file:../types",
+    "@videojs/react": "^10.1.0"
   },
   "gallery": {
     "config": {
